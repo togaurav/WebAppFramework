@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>com.github.hemanthsridhar</groupId>
-    <artifactId>WebAppFramework-jar</artifactId>
+    <artifactId>WebAppFramework</artifactId>
    	<packaging>jar</packaging>
 	<version>1.0</version>
 	
 	 <name>WebAppFramework</name>
     <description>Jar to include in your custom framework which contains excel utilities, main controller, call application, random generation and utilities for selenium operations</description>
-	<url>http://github.com/hemanthsridhar/WebAppFramework-jar</url>
+	<url>http://github.com/hemanthsridhar/WebAppFramework</url>
 	
 	<licenses>
     <license>
@@ -28,9 +28,9 @@
   </developers>
 
  <scm>
-    <connection>scm:git:git://github.com/hemanthsridhar/WebAppFramework-jar.git</connection>
-    <developerConnection>scm:git:ssh://github.com:hemanthsridhar/WebAppFramework-jar.git</developerConnection>
-    <url>http://github.com/hemanthsridhar/WebAppFramework-jar/tree/master</url>
+    <connection>scm:git:git://github.com/hemanthsridhar/WebAppFramework.git</connection>
+    <developerConnection>scm:git:ssh://github.com:hemanthsridhar/WebAppFramework.git</developerConnection>
+    <url>http://github.com/hemanthsridhar/WebAppFramework/tree/master</url>
    </scm>
    
     <properties>
