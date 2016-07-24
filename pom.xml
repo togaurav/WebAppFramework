@@ -4,12 +4,35 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    <groupId>WebAppFramework</groupId>
-    <artifactId>testAutomationFramework</artifactId>
-   	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	<url>http://maven.apache.org</url>
+    <groupId>com.github.hemanthsridhar</groupId>
+    <artifactId>WebAppFramework-jar</artifactId>
+   	<packaging>jar</packaging>
+	<version>1.0</version>
+	
+	 <name>WebAppFramework</name>
+    <description>Jar to include in your custom framework which contains excel utilities, main controller, call application, random generation and utilities for selenium operations</description>
+	<url>http://github.com/hemanthsridhar/WebAppFramework-jar</url>
+	
+	<licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  
+   <developers>
+    <developer>
+      <name>Hemanth Sridhar</name>
+      <email>hemanthsridhar92@gmail.com</email>
+    </developer>
+  </developers>
 
+ <scm>
+    <connection>scm:git:git://github.com/hemanthsridhar/WebAppFramework-jar.git</connection>
+    <developerConnection>scm:git:ssh://github.com:hemanthsridhar/WebAppFramework-jar.git</developerConnection>
+    <url>http://github.com/hemanthsridhar/WebAppFramework-jar/tree/master</url>
+   </scm>
+   
     <properties>
      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     	<compiler.version>1.8</compiler.version>
@@ -21,8 +44,7 @@
     
   
 	
-    <name>Framework</name>
-    <description>New Framework</description>
+   
 
     <dependencies>
 	 <dependency>
@@ -185,8 +207,6 @@
     <build>
 <pluginManagement>
 	 <plugins>
-        
-        	
         	<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -236,6 +256,62 @@
                     <webAppSourceDirectory>${project.build.directory}/site/allure-maven-plugin</webAppSourceDirectory>
                     <stopKey>stop</stopKey>
                     <stopPort>1234</stopPort>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+ 
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <stagingProfileId>19375019933d12</stagingProfileId>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+ 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+ 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration>
             </plugin>
         </plugins>
