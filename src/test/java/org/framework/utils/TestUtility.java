@@ -25,7 +25,7 @@ import org.testng.Assert;
 
 public class TestUtility extends MainController {
 
-	 WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+
 	public Hashtable<String,Integer> headerindex=new Hashtable<String, Integer>();
 	
 	public   void openPageInNewTab() throws AWTException {
@@ -156,6 +156,7 @@ public class TestUtility extends MainController {
 	
 
 	 public  Hashtable<String,Integer> headers(By table, By header){
+		 WebDriverWait wait = new WebDriverWait(getDriver(), 10);
 	        wait.until(ExpectedConditions.presenceOfElementLocated(table));
 	        WebElement tablename = getDriver().findElement(table);
 	        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(header));
